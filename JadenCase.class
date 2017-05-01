@@ -1,0 +1,27 @@
+public class JadenCase {
+
+	public String toJadenCase(String phrase) {
+		// TODO put your code below this comment
+		if (phrase==""||phrase==null)
+		return null;
+    else{
+    String[] words=phrase.split(" ");
+     for(int i=0;i<words.length;i++){
+     StringBuilder sb = new StringBuilder(words[i].substring(0,1).toUpperCase());
+     String restLetters=words[i].substring(1);
+     sb.append(restLetters);
+     words[i]=sb.toString();        
+     }
+     phrase="";
+     for(int i=0;i<words.length;i++){
+      if(i<words.length-1){
+      phrase+=words[i];
+      phrase+=" ";
+      }else
+      phrase+=words[i];
+     }
+     return phrase;
+    }
+	}
+
+}
